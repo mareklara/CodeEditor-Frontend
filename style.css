@@ -1,0 +1,258 @@
+body {
+  font-family: sans-serif;
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr min(1200px, 100% - 4rem) 1fr;
+  margin: 0 auto;
+}
+
+/* Style grid container */
+body > * {
+  grid-column: 2;
+}
+
+#grid-background {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 16rem;
+  height: 16rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: scaleY(0.5) scaleX(1) rotate(0deg);
+  transform-origin: bottom right;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#grid-background {
+  grid-column: 1 / -1;
+}
+
+#grid-background > * {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Hero Section Styles */
+section.container.mx-auto {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.code-editor {
+  position: absolute;
+  bottom: 13rem;
+  right: 5rem;
+  max-width: 300px;
+  background-color: #1d1e22;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.title {
+  font-family: Lato, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1.57px;
+  color: rgb(212 212 212);
+}
+
+.icon {
+  width: 20px;
+  transition: 0.2s ease;
+}
+
+.icon:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #6e7281;
+}
+
+.editor-content {
+  margin: 0 10px 10px;
+  color: white;
+}
+
+.property {
+  margin-left: 30px;
+}
+
+.property:hover {
+  cursor: text;
+}
+
+.editor-content .color-0 {
+  color: rgb(86 156 214);
+}
+
+.editor-content .color-1 {
+  color: rgb(182 206 168);
+}
+
+.editor-content .color-2 {
+  color: rgb(156 220 254);
+}
+
+.editor-content .color-3 {
+  color: rgb(207 146 120);
+}
+
+.color-preview-1,
+.color-preview-2 {
+  height: 8px;
+  width: 8px;
+  border: 1px solid #fff;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.color-preview-1 {
+  background-color: #1d1e22;
+}
+
+.color-preview-1 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.editor-container {
+  position: relative;
+  width: 400px;
+  height: 360px;
+  background-color: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+}
+
+.header {
+  background-color: #333;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.tab {
+  background-color: #4b4b4b;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: #ddd;
+  flex-grow: 1;
+}
+
+.editor-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.line-numbers {
+  background-color: #2d2d2d;
+  color: #ddd;
+  padding: 16px;
+  text-align: right;
+  user-select: none;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.editor {
+  width: 100%;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  resize: none;
+  outline: none;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+.theme-button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  margin-left: 20px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dark-mode .header {
+  background-color: #222;
+}
+
+.dark-mode .tab {
+  background-color: #333;
+}
+
+.dark-mode .line-numbers {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .editor {
+  background-color: #2a2a2a;
+  color: #ddd;
+}
+
+.editor::-webkit-scrollbar,
+.line-numbers::-webkit-scrollbar {
+  display: none;
+}
+
+.editor {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  line-height: 1.5;
+  background: rgb(223, 225, 235);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.line-numbers {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
